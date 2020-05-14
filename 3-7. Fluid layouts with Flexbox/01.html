@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+      .father {
+        display: flex;
+        /* justify-content: center; 가운데로 이동 */
+        /* align-items: center; 가운데로 이동 */
+        align-items: flex-start;
+        height: 100%;
+        justify-content: space-between; /*같은 간격으로 조절*/
+        /* justify-content: space-around; 양끝 여백도 같은 간격으로 조절 */
+        flex-direction: row; /*수직으로 정렬(row가 default)*/
+        /*row-reverse 시  반대방향으로 출력
+        column-reverse 시 반대항향으로 수직 출력*/
+        /* flex-wrap: wrap; 자동 줄바꿈(width값 유지) */
+      }
+      .box {
+        background-color: red;
+        width: 200px;
+        height: 200px;
+        margin-right: 7.3px;
+        border: black solid 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="father">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">10</div>
+    </div>
+  </body>
+</html>

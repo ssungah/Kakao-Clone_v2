@@ -15,3 +15,9 @@ CSS3
    -display: inline-block; 사용시 옆으로 위치 가능
 5. ★position -absolute : html 상에서 해당 element와 관계있는(relative-부모박스) element를 살펴보고 이에 상응하여 포지션 결정
    (부모 박스가 없다면 본문body에 맞춰서 포지션/ 부모 element에 설정하려면 꼭 부모 element에 relative 포지션 설정)
+6. display: flex; : 부모에 적용시킨다.
+   http://flexboxfroggy.com/#ko
+7. pseudo-selector(가상셀렉터) : 셀렉터인테 element가 아닌 것(id나 class를 사용하지 않고 선택하는 방법)
+   -> input + .box : 형제관계
+   -> input > .box : 직계관계
+   http://www.topdesignagencies.com/nth-test/
