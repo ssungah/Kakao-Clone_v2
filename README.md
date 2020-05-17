@@ -21,3 +21,4 @@ CSS3
    -> input + .box : 형제관계
    -> input > .box : 직계관계
    http://www.topdesignagencies.com/nth-test/
+8. box-sizing: border-box -> padding을 추가해도 overcompensate하지 않게 함(box가 커지지 않도록 함)

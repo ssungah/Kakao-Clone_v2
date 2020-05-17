@@ -1,0 +1,27 @@
+.find_header {
+  padding: 10px 30px;
+  margin-bottom: 20px;
+}
+.find__header-list {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  text-align: center;
+}
+
+.find__header-list .header-btn__icon {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+.find__title {
+  padding: 20px 0px;
+  border-top: 1px solid #f5f5f5;
+  font-size: 14px;
+  opacity: 0.6;
+}
+.friend__add-btn i {
+  padding: 10px 15px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
