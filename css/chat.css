@@ -1,9 +1,94 @@
-.chat__write {
+.chats-body {
+  padding: 0;
+}
+.chats-body .header,
+.chats-body .status-bar {
+  padding: 0px 20px;
+}
+
+.chat-screen {
+  background-image: url("../images/chatBg.png");
+  min-height: 100vh;
+}
+.chat-screen .chat__messages {
+  padding-top: 10px;
+  border-top: 1px solid #f7f7f7;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 20px;
+  padding-top: 30px;
+}
+.chat__messages .chat__timestamp {
+  background-color: white;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.024);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.chat__messages . .chat__write {
   position: fixed;
-  width: 100%;
+  bottom: 50px;
+  width: 80%;
+  margin: 0 auto;
   left: 0;
-  bottom: 0;
-  padding: 20px;
+  right: 0;
+  /*가운데 정렬하는 방법*/
+  display: flex;
+  background-color: #fcfcfc;
+  padding: 0 20px;
+  border-radius: 40px;
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
   justify-content: space-between;
+  align-items: center;
+}
+.chat__write i {
+  font-size: 22px;
+}
+.chat__write-column:nth-child(2) {
+  width: 80%;
+}
+.chat__write-column input {
+  padding: 10px;
+  width: 100%;
+  border: none;
+  font-size: 14px;
+}
+.chat__write-column input:focus {
+  outline: none;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+.message .message__content {
+  width: 80%;
+}
+.incoming-message {
+  align-self: flex-start;
+}
+.send-message {
+  align-self: flex-end;
+}
+
+.incoming-message img {
+  width: 40px;
+  border-radius: 20px;
+  margin-right: 20px;
+}
+
+.message .message__content {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
 }
