@@ -1,6 +1,6 @@
 # Kakao-Clone_v2
 
-CSS3
+Module #3 CSS3
 
 1. 기본구조
    selector(id, class, tag name){
@@ -22,3 +22,21 @@ CSS3
    -> input > .box : 직계관계
    http://www.topdesignagencies.com/nth-test/
 8. box-sizing: border-box -> padding을 추가해도 overcompensate하지 않게 함(box가 커지지 않도록 함)
+
+Module #4 Advanced CSS
+
+1. 애니매이션(animation) : 트렌지션으로 효과를 따로 줄필요 없이 이벤트 생성
+   - 호출 : animation: 2s scaleAndRotateSquare ease-in-out infinite;
+   - @keyframes identifier {
+     /_키프레임은 css로 하여금 애니메이션 생성을 알림_/
+     }
+   -
+2. 트랜지션(Transitions)
+   - hover : mouseOver, active : mouseClicked, Focus : 선택된 상태일때
+   - 참고사이트 : https://developer.mozilla.org/en-US/docs/Web/CSS/transition
+3. 트랜스포메이션(Transformations) : html문서의 element들을 변경, 모습이 변하는 효과
+   - transition: transform 1s ease-in-out;
+   - transform: rotate(2turn) scale(0.5, 0.5);
+     /_20deg -> 20도 회전, 5turn -> 5번 회전 _/
+   - 참고사이트 : https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+4. 미디어쿼리(media query), 브라우저 크기를 알아내서 그것에 맞춰서 움직이는 웹-모바일 반응형

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: #00416a;
+        animation: 2s scaleAndRotateSquare2 ease-in-out infinite;
+      }
+      @keyframes scaleAndRotateSquare {
+        /*키프레임은 css로 하여금 애니메이션 생성을 알림*/
+        from {
+          transform: none;
+        }
+        to {
+          transform: rotate(1turn) scale(0.5);
+        }
+      }
+      @keyframes scaleAndRotateSquare2 {
+        /*키프레임은 css로 하여금 애니메이션 생성을 알림*/
+        0% {
+          transform: none;
+        }
+        50% {
+          transform: rotate(1turn) scale(0.5);
+          color: white;
+        }
+        100% {
+          transform: none;
+          color: blue;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">test</div>
+  </body>
+</html>

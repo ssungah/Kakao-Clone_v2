@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        background-color: green;
+        color: white;
+      }
+      .box:hover {
+        /*마우스가 올라갔을 때 이벤트처리 */
+        background-color: red;
+        color: blue;
+        /*transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;*/
+        transition: all 0.5s ease-in-out;
+      }
+      .box:active {
+        /*마우스가 클릭했을 때 이벤트처리 */
+        background-color: yellow;
+        color: black;
+        /*transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;*/
+        transition: all 0.5s ease-in-out;
+      }
+
+      span:nth-child(2) {
+        background-color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <span class="box">
+      text
+    </span>
+    <span>
+      text2
+    </span>
+  </body>
+</html>

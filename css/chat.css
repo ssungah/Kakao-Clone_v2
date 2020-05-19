@@ -1,5 +1,15 @@
+.header-wrapper {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 5px 0px;
+  background-color: white;
+  box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.3),
+    0 -6px 16px -6px rgba(0, 0, 0, 0.024);
+}
 .chats-body {
-  padding: 0;
+  padding: 10px 0px;
+  padding-top: 100px;
 }
 .chats-body .header,
 .chats-body .status-bar {
@@ -8,13 +18,13 @@
 
 .chat-screen {
   background-image: url("../images/chatBg.png");
-  min-height: 100vh;
+  min-height: 1000vh;
 }
 .chat-screen .chat__messages {
-  padding-top: 10px;
   border-top: 1px solid #f7f7f7;
   display: flex;
   flex-direction: column;
+  justify-content: flex;
   align-items: center;
   padding: 0px 20px;
   padding-top: 30px;
@@ -31,9 +41,9 @@
   font-weight: 600;
 }
 
-.chat__messages . .chat__write {
+.chat__write {
   position: fixed;
-  bottom: 50px;
+  bottom: 20px;
   width: 80%;
   margin: 0 auto;
   left: 0;
@@ -66,29 +76,43 @@
 
 .message {
   display: flex;
-  align-items: center;
-  width: 50%;
+  align-items: flex-start;
+  margin-bottom: 20px;
 }
-.message .message__content {
-  width: 80%;
-}
+
 .incoming-message {
   align-self: flex-start;
 }
-.send-message {
+.sent-message {
   align-self: flex-end;
 }
 
 .incoming-message img {
   width: 40px;
   border-radius: 20px;
-  margin-right: 20px;
+  margin-right: 15px;
 }
-
-.message .message__content {
+.incoming-message .message__author {
+  margin-bottom: 10px;
+  display: block;
+  font-weight: 700;
+  font-size: 13px;
+}
+.message .message__bubble {
   background-color: white;
   padding: 10px 20px;
   border-radius: 30px;
+  display: block;
+  color: white;
+  font-weight: 600;
   box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
     0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+}
+.incoming-message .message__bubble {
+  border-top-left-radius: 0;
+  background-image: linear-gradient(to right, #42c9be, #a3dbae);
+}
+.sent-message .message__bubble {
+  background-image: linear-gradient(to left, #8bacdf, #97d3e5);
+  border-top-right-radius: 0;
 }
