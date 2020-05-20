@@ -1,5 +1,8 @@
 .header-wrapper {
   position: fixed;
+  z-index: 2;
+  /* 레이어의 순서를 정해준다.
+  숫자가 클 수록 위로 올라오고, 숫자가 작을 수록 아래로 내려감*/
   top: 0;
   width: 100%;
   padding: 5px 0px;
@@ -41,37 +44,72 @@
   font-weight: 600;
 }
 
-.chat__write {
+.chat__write-container {
   position: fixed;
-  bottom: 20px;
-  width: 80%;
+  bottom: 0px;
   margin: 0 auto;
   left: 0;
   right: 0;
   /*가운데 정렬하는 방법*/
   display: flex;
-  background-color: #fcfcfc;
-  padding: 0 20px;
-  border-radius: 40px;
-  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
-    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  /* box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025); */
+}
+
+.chat__icon-left {
+  position: absolute;
+  left: 10px;
+}
+.chat__icon-right {
+  position: absolute;
+  right: 10px;
+}
+@keyframes float {
+  0% {
+    transform: translateY(-25px);
+    box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+      0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  }
+  50% {
+    transform: translateY(-15px);
+    box-shadow: 0 13px 27px -50px rgba(50, 50, 93, 0.25),
+      0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  }
+  100% {
+    transform: translateY(-25px);
+    box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+      0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  }
+}
+.chat__write {
+  margin: 0 auto;
+  bottom: 0px;
+  width: 100%;
+  border-radius: 0;
+  padding: 20px 60px;
+  border: none;
+  font-size: 14px;
+  transition: all 0.5s ease-in-out;
+}
+.chat__write:focus {
+  outline: none;
+  width: 80%;
+  transform: translateY(-25px);
+  border-radius: 40px;
+  animation: float 2s ease-in-out infinite forwards;
+}
+.chat__icon {
+  font-size: 18px;
+  transition: all 0.3s ease-in-out;
+}
+.chat__write:focus ~ .chat__icon {
+  opacity: 0;
 }
 .chat__write i {
   font-size: 22px;
-}
-.chat__write-column:nth-child(2) {
-  width: 80%;
-}
-.chat__write-column input {
-  padding: 10px;
-  width: 100%;
-  border: none;
-  font-size: 14px;
-}
-.chat__write-column input:focus {
-  outline: none;
 }
 
 .message {
@@ -79,7 +117,6 @@
   align-items: flex-start;
   margin-bottom: 20px;
 }
-
 .incoming-message {
   align-self: flex-start;
 }
@@ -87,10 +124,22 @@
   align-self: flex-end;
 }
 
+@keyframes spin {
+  from {
+    transform: none;
+  }
+  to {
+    transform: rotateY(1turn);
+  }
+}
+
 .incoming-message img {
-  width: 40px;
-  border-radius: 20px;
+  width: 45px;
+  border-radius: 23px;
   margin-right: 15px;
+  animation: spin 2s linear infinite;
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
 }
 .incoming-message .message__author {
   margin-bottom: 10px;
@@ -115,4 +164,31 @@
 .sent-message .message__bubble {
   background-image: linear-gradient(to left, #8bacdf, #97d3e5);
   border-top-right-radius: 0;
+}
+@keyframes incomingAnimation {
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.incoming-message {
+  animation: incomingAnimation 0.5s ease-in forwards;
+  /*forwards : 이 요소가 끝까지 value값을 유지*/
+}
+@keyframes sentAnimation {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.sent-message {
+  animation: sentAnimation 0.5s ease-in forwards;
 }

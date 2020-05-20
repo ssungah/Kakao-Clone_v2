@@ -1,0 +1,26 @@
+.bigScreen {
+  position: fixed;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url("../images/mobile.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  font-weight: 600;
+  color: #0e3d34;
+  padding: 0px 20px;
+  text-align: center;
+  line-height: 1.5;
+  display: none;
+  z-index: 4;
+  /*opasite으로만 설정시 가려져있는 상태는 같으므로 아무곳도 클릭이 안됨*/
+}
+@media screen and (min-width: 550px) {
+  .bigScreen {
+    display: flex;
+  }
+}
